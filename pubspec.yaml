@@ -14,9 +14,9 @@ dependencies:
     sdk: flutter
   font_awesome_flutter:
   opensyd_flutter:
-    path: ../opensyd_flutter
+    git: git@github.com:venosyd/opensyd_flutter.git
   opensyd_providers:
-    path: ../opensyd_providers
+    git: git@github.com:venosyd/opensyd_providers.git
   permission_handler:
   responsive_builder:
   universal_io:
