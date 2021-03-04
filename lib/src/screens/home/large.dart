@@ -36,52 +36,40 @@ class __LargeScreenState extends State<_LargeScreen> with _Logics {
                     ? Row(
                         children: [
                           //
-                          FlatButton(
-                            shape: const StadiumBorder(),
-                            onPressed: () => showDialog<EscoposDialog>(
+                          OpenSyButton(
+                            text: 'Escopos',
+                            action: () => showDialog<EscoposDialog>(
                               context: context,
                               builder: (_) => EscoposDialog(
                                 () => setState(() {}),
                               ),
                             ),
-                            child: const Text(
-                              'Escopos',
-                              style: TextStyle(
-                                color: Color(0xFF424242),
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
                           ).Margin(all: 8),
-
                           //
                           for (final namespace in snap.data)
-                            FlatButton(
-                              shape: const StadiumBorder(),
-                              onPressed: () => setState(
+                            OpenSyButton(
+                              text: namespace.name,
+                              action: () => setState(
                                 () => current = namespace,
                               ),
-                              color: current == namespace
+                              foreground: Colors.white,
+                              background: current == namespace
                                   ? const Color(0xFF424242)
                                   : Colors.grey,
-                              child: Text(
-                                namespace.name,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
                             ).Margin(all: 8),
                         ],
-                      ).Padding(all: 8).Scrollable(direction: Axis.horizontal)
+                      ) //
+                        .Padding(all: 8)
+                        .Scrollable(direction: Axis.horizontal)
                     : Container(),
               ).Height(56),
               //
               // conteudo
               LogsFragment(current, type).Expanded()
             ],
-          ).Colored(Colors.white).Expanded(),
+          ) //
+              .Colored(Colors.white)
+              .Expanded(),
           //
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -121,7 +109,11 @@ class __LargeScreenState extends State<_LargeScreen> with _Logics {
                 ),
               ),
             ],
-          ).Centered().Sizedbox(width: 500, height: 64),
+          ) //
+              .Centered()
+              .Sizedbox(width: 500, height: 64),
         ],
-      ).Colored(const Color(0xFF424242)).Sizedbox();
+      ) //
+          .Colored(const Color(0xFF424242))
+          .Sizedbox();
 }

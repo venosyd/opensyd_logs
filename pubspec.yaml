@@ -2,16 +2,16 @@ name: "opensyd_logs"
 description: Log Apps
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-version: 3.0.0+1
+version: 3.0.1+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.10.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
-    sdk: flutter
+    sdk: flutter 
   font_awesome_flutter:
   opensyd_flutter:
     git: https://github.com/venosyd/opensyd_flutter

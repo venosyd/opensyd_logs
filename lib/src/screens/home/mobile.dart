@@ -36,22 +36,13 @@ class __MobileScreenState extends State<_MobileScreen> with _Logics {
                     ? Row(
                         children: [
                           for (final namespace in snap.data)
-                            FlatButton(
-                              shape: const StadiumBorder(),
-                              onPressed: () => setState(
-                                () => current = namespace,
-                              ),
-                              color: current == namespace
+                            OpenSyButton(
+                              text: namespace.name,
+                              action: () => setState(() => current = namespace),
+                              background: current == namespace
                                   ? const Color(0xFF424242)
                                   : Colors.grey,
-                              child: Text(
-                                namespace.name,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                              foreground: Colors.white,
                             ).Margin(all: 8),
                         ],
                       ) //

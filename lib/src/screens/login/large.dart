@@ -55,21 +55,20 @@ class __LargeScreenState extends State<_LargeScreen> with _Logics {
                 obscure: true,
               ).Sizedbox(width: 256, height: 42),
               //
-              FlatButton(
-                onPressed: () {
+              OpenSyButton(
+                text: loading ? 'entrando...' : 'entrar',
+                action: () {
                   loading = !loading;
                   login(context, _loginctrl.text, _passwdctrl.text)
                       .then((_) => loading = !loading);
                 },
-                color: const Color(0xFF616161),
-                shape: const StadiumBorder(),
-                child: Text(
-                  loading ? 'entrando...' : 'entrar',
-                  style: const TextStyle(color: Colors.white),
-                ),
+                background: const Color(0xFF616161),
+                foreground: Colors.white,
               ).Sizedbox(width: 196, height: 48),
             ],
-          ).Sizedbox(width: 500, height: 200).Centered(),
+          ) //
+              .Sizedbox(width: 500, height: 200)
+              .Centered(),
         ],
       ).Colored(Colors.white);
 }

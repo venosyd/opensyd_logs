@@ -80,16 +80,8 @@ class LogDialog extends StatelessWidget {
             const SizedBox(height: 12),
             //
             //
-            FlatButton(
-              shape: const StadiumBorder(),
-              onPressed: () => Navigator.pop(context),
-              child: const Text('OK',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  )),
-            ).Height(36),
+            OpenSyButton(action: () => Navigator.pop(context), text: 'OK')
+                .Height(36),
           ],
         ),
       );
