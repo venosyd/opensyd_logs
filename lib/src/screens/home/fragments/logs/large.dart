@@ -51,7 +51,9 @@ class __LargeFragmentState extends State<_LargeFragment> with _Logics {
                       rows: snap.data
                           .map((log) => [
                                 //
-                                OpenSyLabel(log.timestampDT),
+                                OpenSyLabel(
+                                  log.timestamp.datetime.readabledatetime,
+                                ),
                                 //
                                 OpenSyLabel(log.namespace ?? ''),
                                 //

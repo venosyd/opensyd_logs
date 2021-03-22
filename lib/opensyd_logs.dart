@@ -70,8 +70,9 @@ class OpensydLogs {
       authkey: logs_authkey,
       localdb: localdb,
       login: login,
-      fromjson: opensydEntitiesMap,
-      collectionmap: opensydCollectionMap,
+      fromjson: OpensydModel.instance.instanceBuilder,
+      emptyinstance: OpensydModel.instance.emptyInstanceGen,
+      collectionmap: OpensydModel.instance.collectionMap,
     );
 
     final logs = LogsProvider.build(isdev, login, '$app_name App');

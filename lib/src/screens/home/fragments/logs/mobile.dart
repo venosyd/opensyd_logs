@@ -49,7 +49,7 @@ class __MobileFragmentState extends State<_MobileFragment> with _Logics {
                           children: [
                             //
                             Text(
-                              snap.data[i].timestampDT,
+                              snap.data[i].timestamp.datetime.readabledatetime,
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,

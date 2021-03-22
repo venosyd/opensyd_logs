@@ -5,9 +5,9 @@
 ///
 library opensyd.logs.dialogs.logdialog;
 
-import 'package:opensyd_providers/opensyd_providers.dart';
-import 'package:opensyd_flutter/opensyd_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:opensyd_flutter/opensyd_flutter.dart';
+import 'package:opensyd_providers/opensyd_providers.dart';
 
 ///
 class LogDialog extends StatelessWidget {
@@ -44,7 +44,9 @@ class LogDialog extends StatelessWidget {
               children: [
                 //
                 const _Texto('Timestamp', bold: true).Width(80),
-                _Texto(log.timestampDT).Padding(horizontal: 12).Expanded(),
+                _Texto(log.timestamp.datetime.readabledatetime)
+                    .Padding(horizontal: 12)
+                    .Expanded(),
                 //
                 const _Texto('Escopo', bold: true).Width(80),
                 _Texto(log.namespace ?? '').Padding(horizontal: 12).Expanded(),
